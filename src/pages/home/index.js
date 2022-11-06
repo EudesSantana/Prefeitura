@@ -4,179 +4,196 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity,
     Image,
+    TouchableOpacity,
+
 } from 'react-native';
 
 //Components
 import Header from "../../components/Header";
 
 
+
 export default function Home() {
     return (
 
-        <View>
-             <StatusBar style="light" />
-            <Header />
-            <View style={styles.Container}>
+        <>
 
-<View style={styles.item1}>
-    <View style={styles.Carossel}>
-    <Text>Carossel</Text>
-    </View>
-</View>
+            <StatusBar style="light" />
+
+           {/*cabeçario*/}
+            <Header/>
 
 
-<View style={styles.item2}>
-    <View style={styles.New}>
-        <Image style={styles.photo} source={require('../../assets/Img/new/new.jpg')} />
-        <View><Text style={styles.textnew}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada sapien non orci porta, a gravida orci <a href="www.google.com">Vestibulum ante...</a> </Text></View>
-    </View>
-</View>
-
-<View style={styles.item3}>
-    <View style={styles.menu}>
-        <View style={styles.opcao}>
-            <Image style={styles.photoop} source={require('../../assets/Img/system/minhasAulas.jpg')} />
-            <View><Text style={styles.op}>minhas aulas</Text></View>
-        </View>
-
-        <View style={styles.opcao}>
-            <Image style={styles.photoop} source={require('../../assets/Img/system/escre.jpg')} />
-            <View><Text style={styles.op}>Escrever-se</Text></View>
-        </View>
-
-        <View style={styles.opcao}>
-            <Image style={styles.photoop} source={require('../../assets/Img/system/consultar.jpg')} />
-            <Text style={styles.op}>Consultar</Text>
-        </View>
-    </View>
-</View>
-
-<View style={styles.item4}>
-    <View style={styles.oficio}>
-        <Image style={styles.photooficio} source={require('../../assets/Img/system/oficio.png')} />
-        <Text style={styles.textnew}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  a gravida orci <a href="www.google.com">Vestibulum...</a> </Text>
-    </View>
-</View>
+            <View style={styles.container}>
 
 
+                     {/*Carossel*/}
+                <View style={styles.carousel}>
+                    <Text>Carossel</Text>
+                </View>
 
-</View>
-       
+                <View style={styles.line}></View>
 
-        </View>
+                <View style={styles.new}>
+                    <Image style={styles.photonew} source={require('../../assets/Img/new/new.jpg')} />
+                    <View>
+                        <Text style={styles.textnew}>
+                        A Prefeitura entregou, no dia (10/07), o Centro de Educação, Esporte, Arte e Cultura (CEEAC) CSU. O evento contou com a presença de autoridades federais,
+                        
+                        </Text>
+                        <Text style={styles.textnew2}>
+                        Ver mais...
+                        </Text>
+                    </View>
+                </View>
+
+
+                    {/* ------------ */}
+                <View style={styles.line}></View>   
+                    
+                    {/*Menu*/}
+                <View style={styles.menu}>
+                    <TouchableOpacity style={styles.opcao}>
+                        <Image style={styles.photoop} source={require('../../assets/Img/system/minhasAulas.jpg')} />
+                            <Text style={styles.op}>Minhas aulas</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.opcao}>
+                        <Image style={styles.photoop} source={require('../../assets/Img/system/escre.jpg')} />
+                        <Text style={styles.op}>Escrever-se</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.opcao}>
+                        <Image style={styles.photoop} source={require('../../assets/Img/system/consultar.jpg')} />
+                        <Text style={styles.op}>Consultar</Text>
+                    </TouchableOpacity>
+                </View>
+
+                    
+                    {/* ------------ */}
+                <View style={styles.line}></View>
+                    
+                    {/*Oficio*/}
+                <View style={styles.oficio}>
+                    <Image style={styles.photooficio} source={require('../../assets/Img/system/oficio.png')} />
+                    <View style={styles.office}>
+                        <Text style={styles.textoficio}>
+                        O ofício é uma correspondência. Nela, são veiculadas ordens, solicitações ou informações com o objetivo de atender a formalidades. Assim, o documento representa uma comunicação oficial, pois usa do canal escolhido pela lei ou pelas partes para esse fim.
+                        </Text>
+                        <Text style={styles.textoficio2}>
+                        Solicite aqui 
+                        </Text>
+                    </View>
+                </View>
+
+            </View>
+        </>
 
     )
 }
 
+
+
+
+//CSS
 const styles = StyleSheet.create({
-    Container: {
-        width: '96%',
-        margin: '0 auto',
-        padding: 30,
-    },
-    line: {
-        borderBottomWidth: 3,
-        borderBottomColor: '#D8d8d8',
-        marginEnd: 50,
-        marginStart: 50,
-    },
-    Carossel: {
-        width: '100%',
+    container: {
         alignItems: 'center',
-        paddingEnd: 16,
-        paddingStart: 16,
-        height: 150,
-
-        borderBottomWidth: 3,
-        borderBottomColor: '#D8d8d8',
-        marginEnd: '5%',
-        marginStart: '5%',
-
+        width: "100%",
 
     },
-    New: {
+    //carossel
+    carousel: {
+        height:200,
+
+    },
+    // ----------------
+    line: {
+    //Linha
+        width: '96%',
+        borderBottomWidth: 3,
+        borderBottomColor: '#D8d8d8',
+    },
+    // ----------------
+    new: {
+    //Novidades
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        height: 200,
-        paddingStart: 16,
-        marginTop: 10,
-        paddingEnd: 16,
-
-
-
-        
-        borderBottomWidth: 3,
-        borderBottomColor: '#D8d8d8',
-        marginEnd: '5%',
-        marginStart: '5%',
-
-
-
-    },
-    photo: {
-        width: '48%',
-        height: '58%',
         height: 150,
-
+        paddingStart: 16,
+        paddingEnd: 16,
+        marginTop: 10,
+    },
+    photonew: {
+        width: '48%',
+        height: '95%',
 
     },
     textnew: {
-        width: '48%',
-        paddingEnd: 16,
+        width: 180,
+        paddingStart: 5,
+
     },
+    textnew2:{
+        flexDirection: 'row',
+       
+        color:'blue',
+    },
+    // ----------------
     menu: {
-        width: '100%',
-        marginTop: 10,
+    //Menu
         justifyContent: 'space-between',
         flexDirection: 'row',
-        
-
-        paddingEnd: 16,
-        paddingStart: 16,
+        width: "100%",
         height: 100,
-
-        borderBottomWidth: 3,
-        borderBottomColor: '#D8d8d8',
-        marginEnd: '5%',
-        marginStart: '5%',
+        paddingStart: 16,
+        paddingEnd: 16,
+        marginTop: 50,
+        alignItems: 'center',
     },
     opcao: {
-        marginTop: '10',
-        width: '33%',
+        width: 100,
+        marginHorizontal: 10,
         alignItems: 'center',
         height: 150,
-
-
     },
     op: {
-        border: 'none',
-        outline: 'none',
-        height: 150,
-
+        textAlign: 'center',
     },
     photoop: {
-
         width: '100%',
-        height: '80%',
-        alignItems: 'center',
-    
-
+        height: '50%',
     },
+    // ----------------
     oficio: {
-        height: 150,
-        marginTop: 10,
+     //Oficio
         flexDirection: 'row',
-        paddingEnd: 16,
-        paddingStart: 16,
-        justifyContent: 'space-between',
         width: '100%',
-
+        height: 170,
+        paddingStart: 16,
+        paddingEnd: 16,
+        marginTop: 20,
+    },
+    office:{
+        flexDirection: 'column',
     },
     photooficio: {
-        width: '49%',
+        width: '40%',
         height: '100%',
     },
-});
+    textoficio: {
+        textTransform: 'capitalize',
+        width: 220,
+        paddingStart: 10,
+    },
+    textoficio2:{
+        textAlign:'center',
+        color:'blue',
+        paddingTop:5,
+    },
+    // ----------------
+
+
+})
