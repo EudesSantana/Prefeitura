@@ -100,24 +100,29 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        width: "100%",
-
+        
     },
     //carossel
     carousel: {
+        alignItems: 'center',
         height:200,
-
+        width: "100%",
+        maxWidth:980,
     },
     // ----------------
     line: {
     //Linha
-        width: '96%',
+        width: '100%',
+        maxWidth:980,
+        alignItems: 'center',
         borderBottomWidth: 3,
         borderBottomColor: '#D8d8d8',
     },
     // ----------------
     new: {
     //Novidades
+        width: '100%',
+        maxWidth:980,
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
@@ -144,6 +149,8 @@ const styles = StyleSheet.create({
     // ----------------
     menu: {
     //Menu
+         width: '100%',
+        maxWidth:980,
         justifyContent: 'space-between',
         flexDirection: 'row',
         width: "100%",
@@ -169,15 +176,15 @@ const styles = StyleSheet.create({
     // ----------------
     oficio: {
      //Oficio
+     
         flexDirection: 'row',
-        width: '100%',
         height: 170,
-        paddingStart: 16,
-        paddingEnd: 16,
         marginTop: 20,
     },
     office:{
         flexDirection: 'column',
+        width: '100%',
+        maxWidth:980,
     },
     photooficio: {
         width: '40%',

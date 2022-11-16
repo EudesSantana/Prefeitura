@@ -1,33 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React from 'react'
+
+//pages
 import Home from './src/pages/home';
-import {useFonts,Anton_400Regular} from '@expo-google-fonts/anton';
+import Profile from './src/pages/profile';
 
 
 
 export default function App() {
   
-let[fontsLoaded] = useFonts({
-  Anton_400Regular,
-})
-
-if(!fontsLoaded){
-  return ;
-}
-
-
   return (
-    <View style={styles.container}>
-      <StatusBar style="light" /> 
-      <Home/>
-      <StatusBar style="auto" />
-    </View>
+    <Router >
+      <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+      </Routes>
+    </Router>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+  

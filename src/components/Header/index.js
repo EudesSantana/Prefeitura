@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import{
     View,
     StatusBar,
@@ -13,31 +13,40 @@ import{
 import {Feather} from '@expo/vector-icons'
 
 
+
 //BARRA SUPERIOR EM ANDROID E IOS
 const StatusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 
 export default function Header(){
     return(
-     <View style={styles.header}>
-         
+     <View style={styles.back }>
+        <View style={styles.header}>
 
-            <Image  style={styles.logoUser} source={require('../../assets/Img/system/Prefeitura.png')}/>
-        
-        
-            <View>
-                <Text style={styles.text}>Secretaria do Esporte e Lazer</Text>
-            </View>
-        <View style={styles.user}>
-            <View> 
-                <TouchableOpacity style={styles.bell}>
-                    <Feather name="bell" size={27} color="#FFF"/>
-                </TouchableOpacity>
-            </View>
-            <View> 
-                <TouchableOpacity style={styles.buttonuser}> 
-                    <Feather name="user" size={27} color="#FFF"/>
-                </TouchableOpacity></View>
+                <Link to='/'> <Image  style={styles.logoUser} source={require('../../assets/Img/system/Prefeitura.png')}/></Link>  
+                
+                
+                    <View>
+                        <Text style={styles.text}>Secretaria do Esporte e Lazer</Text>
+                    </View>
+                <View style={styles.user}>
+                    <View> 
+                        <TouchableOpacity style={styles.bell}>
+                            <Feather name="bell" size={27} color="#FFF"/>
+                        </TouchableOpacity>
+                    </View>
+            
+                    <View> 
+                
+                        <TouchableOpacity style={styles.buttonuser}>
+                        <Link to='/profile'> 
+                            <Feather name="user" size={27} color="#FFF"/>
+                        </Link>
+                        </TouchableOpacity>
+                        
+                        </View>
+                
+                </View> 
         </View>
     </View>
        
@@ -49,7 +58,9 @@ export default function Header(){
 const styles = StyleSheet.create({
     header: {
     alignItems:'center',
-    backgroundColor: '#191979',
+    justifyContent:'center',
+    maxWidth:980,
+    width:'100%',
     paddingTop: StatusBarHeight,
     paddingEnd: 16,
     paddingStart:16,
@@ -57,9 +68,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
     },
+    back:{
+    backgroundColor: '#rgb(40, 61, 163)',
+    alignItems:'center',
+    },
     user:{
     justifyContent: 'space-between',
     flexDirection: 'row',
+
     },
     bell:{
         paddingEnd: 6,
@@ -81,6 +97,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 44/ 2,
+        textDecoration: 'none'
     },
     logoUser:{
         width:40,
