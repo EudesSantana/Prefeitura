@@ -1,5 +1,0 @@
-expo install expo-font @expo-google-fonts/anton
-
-npx expo install expo-splash-screen
-
-https://www.youtube.com/watch?v=ncA3eHZHXRc&ab_channel=CommunityCode
