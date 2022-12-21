@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     maxWidth:980,
-    width:'100%',
+            width:'100%',
     paddingTop: StatusBarHeight,
     paddingEnd: 16,
     paddingStart:16,
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 44/ 2,
-        textDecoration: 'none'
+    
     },
     logoUser:{
         width:40,

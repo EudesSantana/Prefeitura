@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { StatusBar } from 'expo-status-bar';
 import {
     View,
@@ -34,10 +35,11 @@ export default function Profile() {
                 <View style={styles.ops} >
 
                 <View style={styles.line}></View>  
-                
-                 <TouchableOpacity>
-                    <Text style={styles.op}>Informações do aluno</Text>
-                 </TouchableOpacity>
+                <Link to='/student'> 
+                    <TouchableOpacity>
+                        <Text style={styles.op}>Informações do aluno</Text>
+                    </TouchableOpacity>
+                 </Link>
 
                  <View style={styles.line}></View>  
 
